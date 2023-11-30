@@ -3,8 +3,8 @@
 
 from models.Bar import *
 from models.Bird import *
-from random import randrange
 from controllers import *
+import secrets
 
 
 class FlappyBird:
@@ -184,7 +184,7 @@ def main():
             sleep(0.01)
 
         bar1.undraw()
-        center = Point(110, randrange(-50, 20, 20))  # creates two bars in random positions
+        center = Point(110, secrets.SystemRandom().randrange(-50, 20, 20))  # creates two bars in random positions
         bar1 = Bars(win, center, 20, 150, 190)
         score.undraw()
         score.draw(win)
