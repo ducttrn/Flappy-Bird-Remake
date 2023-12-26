@@ -539,7 +539,8 @@ class _BBox(GraphicsObject):
     # Internal base class for objects represented by bounding box
     # (opposite corners) Line segment is a degenerate case.
     
-    def __init__(self, p1, p2, options=["outline","width","fill"]):
+    def __init__(self, p1, p2, options=None):
+        options = ["outline","width","fill"] if options is None else options
         GraphicsObject.__init__(self, options)
         self.p1 = p1.clone()
         self.p2 = p2.clone()
