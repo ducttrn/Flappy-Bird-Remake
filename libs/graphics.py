@@ -330,15 +330,13 @@ class GraphWin(tk.Canvas):
         return self.width
     
     def toScreen(self, x, y):
-        trans = self.trans
-        if trans:
+        if trans := self.trans:
             return self.trans.screen(x,y)
         else:
             return x,y
                       
     def toWorld(self, x, y):
-        trans = self.trans
-        if trans:
+        if trans := self.trans:
             return self.trans.world(x,y)
         else:
             return x,y
